@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -388,6 +387,322 @@
   .step::before {
     content: counter(steps, decimal-leading-zero);
     font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--cherry-red);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .step h3 { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+  
+  .step p { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
+
+  /* ---- PRICING ---- */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+    margin-top: 48px;
+  }
+
+  .plan {
+    background: linear-gradient(135deg, rgba(18, 4, 27, 0.9) 0%, rgba(35, 8, 54, 0.6) 100%);
+    padding: 48px 36px;
+    position: relative;
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+  }
+
+  .plan:hover { 
+    border-color: var(--hot-pink); 
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(255, 46, 147, 0.2);
+  }
+
+  .plan.featured { 
+    border: 2px solid var(--hot-pink); 
+    background: linear-gradient(135deg, rgba(12, 1, 18, 0.98) 0%, rgba(45, 10, 68, 0.85) 100%);
+    box-shadow: 0 0 50px rgba(255, 46, 147, 0.3); 
+  }
+
+  .plan.featured::before {
+    content: 'LA FÓRMULA DE DISEÑO';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--cherry-red), var(--hot-pink));
+    color: var(--white);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(255, 49, 49, 0.5);
+  }
+
+  /* GHOST TIER EXTENSION */
+  .plan.ghost-tier {
+    grid-column: 1 / -1;
+    max-width: 550px;
+    margin: 32px auto 0;
+    background: radial-gradient(circle at top right, rgba(255, 49, 49, 0.08), rgba(6, 1, 10, 0.95));
+    border: 1px dashed rgba(255, 122, 0, 0.25);
+    box-shadow: inset 0 0 20px rgba(255, 46, 147, 0.05);
+    opacity: 0.75;
+    transition: all 0.5s ease;
+  }
+
+  .plan.ghost-tier:hover {
+    opacity: 1;
+    border: 1px solid var(--tangerine);
+    box-shadow: 0 0 35px rgba(255, 122, 0, 0.25), inset 0 0 15px rgba(255, 49, 49, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .plan.ghost-tier .ghost-badge {
+    position: absolute;
+    top: 14px; right: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--tangerine);
+    text-transform: uppercase;
+    animation: ghostPulse 2s infinite alternate;
+  }
+
+  @keyframes ghostPulse {
+    0% { opacity: 0.4; text-shadow: 0 0 0px transparent; }
+    100% { opacity: 1; text-shadow: 0 0 8px var(--tangerine); }
+  }
+
+  .plan-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--bubblegum-pink);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .plan-price { 
+    font-family: 'Playfair Display', serif;
+    font-size: 64px; 
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1; 
+    margin-bottom: 12px; 
+  }
+  
+  .plan.featured .plan-price {
+    color: var(--tangerine);
+    text-shadow: 0 0 25px rgba(255, 122, 0, 0.4);
+  }
+
+  .plan.ghost-tier .plan-price {
+    font-size: 48px;
+    color: var(--white);
+    animation: glitchText 4s infinite;
+  }
+
+  @keyframes glitchText {
+    0%, 95%, 100% { transform: none; text-shadow: none; }
+    96% { transform: skewX(-10deg); text-shadow: 2px -1px var(--cherry-red), -2px 1px var(--tangerine); }
+    98% { transform: skewX(8deg); text-shadow: -1px 2px var(--hot-pink), 1px -2px var(--bubblegum-pink); }
+  }
+  
+  .plan-price sup { font-size: 24px; vertical-align: super; font-weight: 400; font-family: 'Playfair Display', serif; margin-right: 4px; }
+  
+  .plan-desc { font-size: 14px; color: var(--gray); margin-bottom: 36px; font-weight: 300; line-height: 1.5; }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 44px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .plan-features li { font-size: 14px; color: var(--white); display: flex; align-items: flex-start; gap: 12px; font-weight: 300; }
+  .plan-features li::before { content: '🐾'; color: var(--cherry-red); flex-shrink: 0; font-size: 12px; }
+  .plan.featured .plan-features li::before { color: var(--tangerine); }
+  .plan.ghost-tier .plan-features li::before { content: '🔥'; color: var(--tangerine); }
+
+  .plan .btn-primary { 
+    width: 100%; 
+    text-align: center; 
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 16px;
+  }
+  
+  .plan .btn-ghost { 
+    width: 100%; 
+    text-align: center; 
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .plan.ghost-tier .btn-ghost {
+    border-color: rgba(255, 122, 0, 0.4);
+    color: var(--tangerine);
+  }
+  .plan.ghost-tier .btn-ghost:hover {
+    background: rgba(255, 122, 0, 0.15);
+    border-color: var(--tangerine);
+    color: var(--white);
+  }
+
+  .alt-payment-text {
+    display: block;
+    text-align: center;
+    margin-top: 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .alt-payment-text:hover {
+    color: var(--hot-pink);
+  }
+
+  /* ---- FINAL CTA ---- */
+  .final-cta { text-align: center; padding: 130px 24px; position: relative; overflow: hidden; z-index: 2; }
+  .final-cta::before {
+    content: 'RAW';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(100px, 25vw, 260px);
+    font-weight: 900;
+    font-style: italic;
+    color: rgba(255, 49, 49, 0.03);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+  .final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 60px); margin-bottom: 20px; }
+  .final-cta p { color: var(--bubblegum-pink); margin-bottom: 40px; font-size: 16px; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--border);
+    padding: 48px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  footer p { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--gray); letter-spacing: 1px; }
+  footer a { color: var(--cherry-red); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 1px; transition: all 0.2s; }
+  footer a:hover { color: var(--tangerine); text-shadow: 0 0 8px var(--tangerine); }
+
+  /* ---- SCROLL REVEAL ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    .strip { height: 180px; }
+    .strip-img:hover { flex: 1.8; }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<canvas id="ambient-canvas"></canvas>
+
+<!-- HERO SECTION -->
+<section class="hero" style="padding:0; max-width:100%;">
+  <div class="spotlight"></div>
+  <div class="spotlight-2"></div>
+  
+  <div class="hero-content">
+    <span class="tag-pill">✦ ACCESO COMPLETO AL WORKFLOW DE ALTO IMPACTO ✦</span>
+    <h1>Diseñá tu propio<span>.</span>avatar<em>para redes</em></h1>
+    <p class="hero-sub">
+      Workflows de modelado hiper-atractivo, prompts de anatomía estética y herramientas de control facial en tiempo real. Configurá un alter ego digital de forma limpia, consistente y con alto impacto.
+    </p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn-primary">CONSEGUIR MI PACK →</a>
+      <a href="#how" class="btn-ghost">EL MÉTODO</a>
+    </div>
+  </div>
+
+  <div class="strip">
+    <img class="strip-img" src="1.jpg" alt="Connie Feral 1" style="object-position: center 20%;">
+    <img class="strip-img" src="2.jpg" alt="Connie Feral 2">
+    <img class="strip-img" src="3.jpg" alt="Connie Feral 3">
+    <img class="strip-img" src="4.jpg" alt="Connie Feral 4">
+  </div>
+</section>
+
+<!-- MARQUEE INFINITA -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- VALUE PROPOSITION -->
+<section class="reveal">
+  <p class="section-label">arquitectura estética</p>
+  <h2>La fórmula de la<br><em>atracción virtual</em></h2>
+
+  <div class="features">
+    <div class="feature">
+      <span class="feature-icon">🌶️</span>
+      <h3>Estética & Rasgos Premium</h3>
+      <p>Librerías exclusivas para estructurar facciones sumamente magnéticas, miradas expresivas de gran impacto, simetría perfecta y acabados ultra detallados.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📱</span>
+      <h3>Consistencia en Redes</h3>
+      <p>Sistemas lógicos para clonar facciones en cualquier posición, pose o iluminación. Generá sets completos de contenido comercial e intuitivo impecables.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🎬</span>
+      <h3>Generación de Video</h3>
+      <p>Configuraciones y accesos preferenciales a los mejores renderizadores de video sin costo. Creá clips hiperrealistas fluidos listos para monetizar.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">⛓️</span>
+      <h3>Motion Control Gratis</h3>
+      <p>Sistemas y controladores faciales libres para vincular tus expresiones corporales y gesticulaciones con el rostro de tu avatar de forma instantánea.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTERS / PROOF -->
+<div class="proof" style="max-width:100%;">
+  <div class="proof-grid">
+    <div><div class="proof-number">100%</diMono', monospace;
     font-size: 13px;
     color: var(--cherry-red);
     font-weight: 700;

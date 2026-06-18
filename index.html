@@ -702,1667 +702,235 @@
 <!-- COUNTERS / PROOF -->
 <div class="proof" style="max-width:100%;">
   <div class="proof-grid">
-    <div><div class="proof-number">100%</diMono', monospace;
-    font-size: 13px;
-    color: var(--cherry-red);
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    display: block;
-    margin-bottom: 20px;
-  }
-  
-  .step h3 { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; margin-bottom: 12px; }
-  
-  .step p { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
-
-  /* ---- PRICING ---- */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 28px;
-    margin-top: 48px;
-  }
-
-  .plan {
-    background: linear-gradient(135deg, rgba(18, 4, 27, 0.9) 0%, rgba(35, 8, 54, 0.6) 100%);
-    padding: 48px 36px;
-    position: relative;
-    border-radius: 28px;
-    border: 1px solid var(--border);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-  }
-
-  .plan:hover { 
-    border-color: var(--hot-pink); 
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(255, 46, 147, 0.2);
-  }
-
-  .plan.featured { 
-    border: 2px solid var(--hot-pink); 
-    background: linear-gradient(135deg, rgba(12, 1, 18, 0.98) 0%, rgba(45, 10, 68, 0.85) 100%);
-    box-shadow: 0 0 50px rgba(255, 46, 147, 0.3); 
-  }
-
-  .plan.featured::before {
-    content: 'LA FÓRMULA DE DISEÑO';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--cherry-red), var(--hot-pink));
-    color: var(--white);
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    padding: 6px 18px;
-    border-radius: 30px;
-    font-weight: 700;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(255, 49, 49, 0.5);
-  }
-
-  /* ---- GHOST TIER (MÓDULO OCULTO) ---- */
-  .plan.ghost-tier {
-    grid-column: 1 / -1;
-    max-width: 550px;
-    margin: 40px auto 0;
-    background: radial-gradient(circle at top right, rgba(255, 49, 49, 0.06), rgba(6, 1, 10, 0.98));
-    border: 1.5px dashed rgba(255, 122, 0, 0.25);
-    box-shadow: inset 0 0 25px rgba(255, 46, 147, 0.03);
-    opacity: 0.65;
-    transition: all 0.5s ease;
-  }
-
-  .plan.ghost-tier:hover {
-    opacity: 1;
-    border: 1.5px solid var(--tangerine);
-    box-shadow: 0 0 40px rgba(255, 122, 0, 0.25), inset 0 0 20px rgba(255, 49, 49, 0.08);
-    transform: translateY(-4px);
-  }
-
-  .plan.ghost-tier .ghost-badge {
-    position: absolute;
-    top: 16px; right: 24px;
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    color: var(--tangerine);
-    text-transform: uppercase;
-    animation: ghostPulse 1.8s infinite alternate;
-  }
-
-  @keyframes ghostPulse {
-    0% { opacity: 0.4; text-shadow: 0 0 0px transparent; }
-    100% { opacity: 1; text-shadow: 0 0 8px var(--tangerine); }
-  }
-
-  .plan-name {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: var(--bubblegum-pink);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .plan-price { 
-    font-family: 'Playfair Display', serif;
-    font-size: 64px; 
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1; 
-    margin-bottom: 12px; 
-  }
-  
-  .plan.featured .plan-price {
-    color: var(--tangerine);
-    text-shadow: 0 0 25px rgba(255, 122, 0, 0.4);
-  }
-
-  .plan.ghost-tier .plan-price {
-    font-size: 52px;
-    color: var(--white);
-    animation: glitchText 4.5s infinite;
-  }
-
-  @keyframes glitchText {
-    0%, 94%, 100% { transform: none; text-shadow: none; }
-    95% { transform: skewX(-12deg); text-shadow: 2px -1.5px var(--cherry-red), -2px 1.5px var(--tangerine); }
-    97% { transform: skewX(9deg); text-shadow: -1.5px 2px var(--hot-pink), 1.5px -2px var(--bubblegum-pink); }
-  }
-  
-  .plan-price sup { font-size: 24px; vertical-align: super; font-weight: 400; font-family: 'Playfair Display', serif; margin-right: 4px; }
-  
-  .plan-desc { font-size: 14px; color: var(--gray); margin-bottom: 36px; font-weight: 300; line-height: 1.5; }
-
-  .plan-features {
-    list-style: none;
-    margin-bottom: 44px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .plan-features li { font-size: 14px; color: var(--white); display: flex; align-items: flex-start; gap: 12px; font-weight: 300; }
-  .plan-features li::before { content: '🐾'; color: var(--cherry-red); flex-shrink: 0; font-size: 12px; }
-  .plan.featured .plan-features li::before { color: var(--tangerine); }
-  .plan.ghost-tier .plan-features li::before { content: '🔥'; color: var(--tangerine); }
-
-  .plan .btn-primary { 
-    width: 100%; 
-    text-align: center; 
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 16px;
-  }
-  
-  .plan .btn-ghost { 
-    width: 100%; 
-    text-align: center; 
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 15px;
-  }
-
-  .plan.ghost-tier .btn-ghost {
-    border-color: rgba(255, 122, 0, 0.4);
-    color: var(--tangerine);
-  }
-  .plan.ghost-tier .btn-ghost:hover {
-    background: rgba(255, 122, 0, 0.15);
-    border-color: var(--tangerine);
-    color: var(--white);
-  }
-
-  .alt-payment-text {
-    display: block;
-    text-align: center;
-    margin-top: 14px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--gray);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .alt-payment-text:hover {
-    color: var(--hot-pink);
-  }
-
-  /* ---- FINAL CTA ---- */
-  .final-cta { text-align: center; padding: 130px 24px; position: relative; overflow: hidden; z-index: 2; }
-  .final-cta::before {
-    content: 'RAW';
-    position: absolute;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(100px, 25vw, 260px);
-    font-weight: 900;
-    font-style: italic;
-    color: rgba(255, 49, 49, 0.03);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-  }
-  .final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 60px); margin-bottom: 20px; }
-  .final-cta p { color: var(--bubblegum-pink); margin-bottom: 40px; font-size: 16px; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-  /* ---- FOOTER ---- */
-  footer {
-    position: relative;
-    z-index: 2;
-    border-top: 1px solid var(--border);
-    padding: 48px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  footer p { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--gray); letter-spacing: 1px; }
-  footer a { color: var(--cherry-red); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 1px; transition: all 0.2s; }
-  footer a:hover { color: var(--tangerine); text-shadow: 0 0 8px var(--tangerine); }
-
-  /* ---- SCROLL REVEAL ---- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 600px) {
-    .strip { height: 180px; }
-    .strip-img:hover { flex: 1.8; }
-    footer { flex-direction: column; text-align: center; }
-  }
-
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-</style>
-</head>
-<body>
-
-<canvas id="ambient-canvas"></canvas>
-
-<!-- HERO SECTION -->
-<section class="hero" style="padding:0; max-width:100%;">
-  <div class="spotlight"></div>
-  <div class="spotlight-2"></div>
-  
-  <div class="hero-content">
-    <span class="tag-pill">✦ ACCESO COMPLETO AL WORKFLOW DE ALTO IMPACTO ✦</span>
-    <h1>Diseñá tu propio<span>.</span>avatar<em>para redes</em></h1>
-    <p class="hero-sub">
-      Workflows de modelado hiper-atractivo, prompts de anatomía estética y herramientas de control facial en tiempo real. Configurá un alter ego digital de forma limpia, consistente y con alto impacto.
-    </p>
-    <div class="hero-cta">
-      <a href="#pricing" class="btn-primary">CONSEGUIR MI PACK →</a>
-      <a href="#how" class="btn-ghost">EL MÉTODO</a>
-    </div>
+    <div><div class="proof-number">100%</div><div class="proof-label">SENSACIÓN NATURAL</div></div>
+    <div><div class="proof-number">VIP</div><div class="proof-label">PROMPTS SIN LÍMITES</div></div>
+    <div><div class="proof-number">FREE</div><div class="proof-label">VIDEO & MOTION CONTROL</div></div>
   </div>
-
-  <div class="strip">
-    <img class="strip-img" src="1.jpg" alt="Connie Feral 1" style="object-position: center 20%;">
-    <img class="strip-img" src="2.jpg" alt="Connie Feral 2">
-    <img class="strip-img" src="3.jpg" alt="Connie Feral 3">
-    <img class="strip-img" src="4.jpg" alt="Connie Feral 4">
-  </div>
-</section>
-
-<!-- MARQUEE INFINITA -->
-<div class="marquee-wrap">
-  <div class="marquee-track" id="marquee-track"></div>
 </div>
 
-<!-- VALUE PROPOSITION -->
-<section class="reveal">
-  <p class="section-label">arquitectura estética</p>
-  <h2>La fórmula de la<br><em>atracción virtual</em></h2>
+<!-- HOW IT WORKS (EL MÉTODO) -->
+<section id="how" class="reveal">
+  <p class="section-label">el método</p>
+  <h2>Desarrollo de<br><em>presencia digital</em></h2>
 
-  <div class="features">
-    <div class="feature">
-      <span class="feature-icon">🌶️</span>
-      <h3>Estética & Rasgos Premium</h3>
-      <p>Librerías exclusivas para estructurar facciones sumamente magnéticas, miradas expresivas de gran impacto, simetría perfecta y acabados ultra detallados.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">📱</span>
-      <h3>Consistencia en Redes</h3>
-      <p>Sistemas lógicos para clonar facciones en cualquier posición, pose o iluminación. Generá sets completos de contenido comercial e intuitivo impecables.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">🎬</span>
-      <h3>Generación de Video</h3>
-      <p>Configuraciones y accesos preferenciales a los mejores renderizadores de video sin costo. Creá clips hiperrealistas fluidos listos para monetizar.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">⛓️</span>
-      <h3>Motion Control Gratis</h3>
-      <p>Sistemas y controladores faciales libres para vincular tus expresiones corporales y gesticulaciones con el rostro de tu avatar de forma instantánea.</p>
-    </div>
+  <div class="steps">
+    <div class="step"><h3>Fascinación</h3><p>Elegís el nivel de fidelidad técnica y profundidad visual que querés incorporar.</p></div>
+    <div class="step"><h3>Transacción</h3><p>Adquirís el pack a través de PayPal como opción principal o Mercado Pago.</p></div>
+    <div class="step"><h3>Materialización</h3><p>Implementás la librería de prompts para dar forma a un avatar único con tu propia identidad letal.</p></div>
+    <div class="step"><h3>Animación</h3><p>Sincronizás tus gestos físicos con el personaje usando los controladores de video gratis.</p></div>
   </div>
 </section>
 
-<!-- COUNTERS / PROOF -->
-<div class="proof" style="max-width:100%;">
-  <div class="proof-grid">
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px 40px;
-    position: relative;
-  }
+<!-- PRICING TIERS -->
+<section id="pricing" style="max-width:100%; padding-left:24px; padding-right:24px;" class="reveal">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="section-label">acceso inmediato</p>
+    <h2 style="text-align: center; margin-bottom: 12px;">Elegí tu <em>pack</em></h2>
 
-  .spotlight {
-    position: absolute;
-    width: 450px; height: 800px;
-    background: conic-gradient(from 180deg at 50% 0%, rgba(255, 49, 49, 0.22) 0deg, transparent 55deg);
-    top: -100px; left: 8%;
-    transform: rotate(-18deg);
-    pointer-events: none;
-  }
-  .spotlight-2 {
-    position: absolute;
-    width: 450px; height: 800px;
-    background: conic-gradient(from 180deg at 50% 0%, rgba(255, 122, 0, 0.18) 0deg, transparent 50deg);
-    top: -100px; right: 5%;
-    transform: rotate(22deg);
-    pointer-events: none;
-  }
+    <div class="pricing-grid">
 
-  .tag-pill {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--cherry-red), var(--hot-pink));
-    color: var(--white);
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    padding: 8px 24px;
-    border-radius: 999px;
-    margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 15px rgba(255, 49, 49, 0.45);
-    animation: pulsePill 2.5s ease-in-out infinite;
-  }
+      <!-- TIER 1: BASICO -->
+      <div class="plan">
+        <p class="plan-name">Guía de Animación</p>
+        <div class="plan-price"><sup>$</sup>5</div>
+        <p class="plan-desc">Tutoriales avanzados paso a paso y trucos de animación fluida para video gratuito y prompts de movimiento.</p>
+        <ul class="plan-features">
+          <li>Tutorial paso a paso para renderizar video gratis</li>
+          <li>Atajos y prompts exclusivos de movimiento dinámico</li>
+          <li>Acceso a herramientas y motores de video sin costo</li>
+          <li>Trucos de fluidez gestual y efectos de cámara estáticos</li>
+        </ul>
+        <a href="https://www.paypal.com" target="_blank" class="btn-ghost">CONSEGUIR CON PAYPAL</a>
+        <a href="https://www.mercadopago.com" target="_blank" class="alt-payment-text">o pagar con Mercado Pago</a>
+      </div>
 
-  @keyframes pulsePill {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 49, 49, 0.6); }
-    50% { box-shadow: 0 0 0 14px rgba(255, 49, 49, 0); }
-  }
+      <!-- TIER 2: MEDIO -->
+      <div class="plan featured">
+        <p class="plan-name">Motor de Avatar AI</p>
+        <div class="plan-price"><sup>$</sup>19</div>
+        <p class="plan-desc">Pack completo de modelado de avatar y consistencia para redes, anuncios y contenido publicitario.</p>
+        <ul class="plan-features">
+          <li>Todo lo incluido en la Guía de Animación</li>
+          <li>Pack completo de modelado de avatares AI desde cero</li>
+          <li>Prompts premium para facciones alternativas avanzadas</li>
+          <li>Ajustes de iluminación suave y texturas de piel realistas</li>
+          <li>Fórmula de consistencia facial en múltiples ángulos</li>
+        </ul>
+        <a href="https://www.paypal.com" target="_blank" class="btn-primary">CONSEGUIR PACK CON PAYPAL</a>
+        <a href="https://www.mercadopago.com" target="_blank" class="alt-payment-text" style="color: var(--bubblegum-pink);">o pagar con Mercado Pago</a>
+      </div>
 
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 8.5vw, 90px);
-    font-weight: 800;
-    line-height: 0.95;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-  }
+      <!-- TIER 3: VIP -->
+      <div class="plan">
+        <p class="plan-name">Full Suite Virtual</p>
+        <div class="plan-price"><sup>$</sup>29</div>
+        <p class="plan-desc">Acceso ilimitado para tracking facial en vivo, doblaje de audio labial AI y prompts de fotografía premium.</p>
+        <ul class="plan-features">
+          <li>Todo lo incluido en el Motor de Avatar AI</li>
+          <li>Configuración de Motion Control gratis (tracking facial en vivo)</li>
+          <li>Prompts fotográficos avanzados sin límites para contenido en redes</li>
+          <li>Workflow de sincronización de voz y doblaje labial AI</li>
+          <li>Actualizaciones prioritarias de librerías estéticas</li>
+        </ul>
+        <a href="https://www.paypal.com" target="_blank" class="btn-primary" style="background: linear-gradient(135deg, var(--cherry-red) 0%, var(--hot-pink) 100%); box-shadow: 0 4px 15px rgba(255, 49, 49, 0.45);">CONSEGUIR PACK CON PAYPAL</a>
+        <a href="https://www.mercadopago.com" target="_blank" class="alt-payment-text">o pagar con Mercado Pago</a>
+      </div>
 
-  .hero h1 span {
-    color: transparent;
-    -webkit-text-stroke: 1.5px var(--bubblegum-pink);
-    filter: drop-shadow(0 0 15px var(--hot-pink));
-  }
+      <!-- TIER GHOST: EXTENSIÓN SECRETA (Venta rápida) -->
+      <div class="plan ghost-tier">
+        <span class="ghost-badge">// UNRESTRICTED SYSTEM</span>
+        <p class="plan-name">Generación Sin Filtros</p>
+        <div class="plan-price"><sup>$</sup>5</div>
+        <p class="plan-desc">Módulos avanzados y trucos de evasión lógica para renderizar imágenes y videos artísticos fluidos sin restricciones (NSFW Bypass System).</p>
+        <ul class="plan-features">
+          <li>Librería de prompts estéticos de anatomía sin censura técnica</li>
+          <li>Parámetros de bypass para renderizadores de video externos</li>
+          <li>Configuraciones de texturas y pliegues de piel hiperrealistas</li>
+          <li>Desbloqueo de palabras clave para prompts hiper-explícitos</li>
+        </ul>
+        <a href="https://www.paypal.com" target="_blank" class="btn-ghost">DESBLOQUEAR ACCESO INMEDIATO</a>
+        <a href="https://www.mercadopago.com" target="_blank" class="alt-payment-text">o pagar con Mercado Pago</a>
+      </div>
 
-  .hero h1 em {
-    font-style: italic;
-    color: var(--tangerine);
-    display: block;
-    font-size: 0.42em;
-    letter-spacing: 4px;
-    font-weight: 400;
-    font-family: 'Playfair Display', serif;
-    margin-top: 14px;
-    text-transform: lowercase;
-    text-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
-  }
+    </div>
 
-  .hero-sub {
-    max-width: 580px;
-    margin: 12px auto 32px;
-    font-size: clamp(15px, 2.2vw, 19px);
-    line-height: 1.7;
-    color: var(--bubblegum-pink);
-    font-weight: 300;
-    opacity: 0.95;
-  }
-
-  .hero-cta { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--cherry-red) 0%, var(--hot-pink) 100%);
-    color: var(--white);
-    padding: 18px 40px;
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
-    box-shadow: 0 8px 30px rgba(255, 49, 49, 0.5);
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 15px 45px rgba(255, 46, 147, 0.8);
-  }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--bubblegum-pink);
-    padding: 17px 40px;
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1.5px solid var(--border);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .btn-ghost:hover {
-    border-color: var(--hot-pink);
-    background: rgba(255, 46, 147, 0.12);
-    color: var(--white);
-  }
-
-  /* ─── IMAGE STRIP ─── */
-  .strip {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    gap: 3px;
-    overflow: hidden;
-    height: clamp(180px, 26vw, 300px);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background-color: var(--purple-deep);
-  }
-
-  .strip-img {
-    flex: 1;
-    object-fit: cover;
-    object-position: center top;
-    filter: grayscale(15%) contrast(1.1) brightness(0.8);
-    transition: flex 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-    background: var(--purple-mid);
-  }
-
-  .strip-img:hover { flex: 2.8; filter: grayscale(0%) contrast(1.15) brightness(1); }
-
-  /* ---- MARQUEE ---- */
-  .marquee-wrap {
-    background: linear-gradient(90deg, var(--cherry-red), var(--hot-pink));
-    overflow: hidden;
-    padding: 14px 0;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 4px 20px rgba(255, 49, 49, 0.4);
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 0;
-    animation: marqueeScroll 28s linear infinite;
-    width: max-content;
-  }
-
-  .marquee-item {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: var(--white);
-    padding: 0 28px;
-    white-space: nowrap;
-    text-transform: uppercase;
-  }
-
-  .marquee-item span { color: var(--tangerine); margin-right: 8px; }
-
-  @keyframes marqueeScroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-
-  /* ---- SECTIONS BASE ---- */
-  section {
-    position: relative;
-    z-index: 2;
-    padding: 110px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.35em;
-    color: var(--hot-pink);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    text-shadow: 0 0 10px rgba(255, 46, 147, 0.4);
-  }
-
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(34px, 5.5vw, 68px);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 48px;
-  }
-
-  h2 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--tangerine);
-  }
-
-  /* ---- FEATURES ---- */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-  }
-
-  .feature {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 40px 32px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1);
-    backdrop-filter: blur(8px);
-  }
-
-  .feature:hover {
-    border-color: var(--bubblegum-pink);
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(255, 46, 147, 0.25);
-  }
-
-  .feature::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--cherry-red), var(--tangerine));
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .feature:hover::before { opacity: 1; }
-
-  .feature-icon { font-size: 36px; margin-bottom: 22px; display: block; filter: drop-shadow(0 0 8px rgba(255, 49, 49, 0.5)); }
-  
-  .feature h3 { 
-    font-family: 'Syne', sans-serif;
-    font-size: 21px; 
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px; 
-    color: var(--white);
-  }
-  
-  .feature p { font-size: 14px; color: var(--gray); line-height: 1.7; font-weight: 300; }
-
-  /* ---- PROOF ---- */
-  .proof { 
-    text-align: center; 
-    padding: 72px 24px; 
-    border-top: 1px solid var(--border); 
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    z-index: 2;
-    background: linear-gradient(to right, transparent, rgba(255, 46, 147, 0.05), transparent);
-  }
-  
-  .proof-grid { display: flex; justify-content: center; gap: clamp(40px, 9vw, 110px); flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
-  
-  .proof-number { 
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 9vw, 88px); 
-    font-weight: 800;
-    font-style: italic;
-    color: var(--tangerine); 
-    text-shadow: 0 0 25px rgba(255, 122, 0, 0.35);
-  }
-  
-  .proof-label { 
-    font-family: 'Space Mono', monospace;
-    font-size: 11px; 
-    color: var(--bubblegum-pink); 
-    letter-spacing: 3px;
-    margin-top: 8px; 
-    text-transform: uppercase;
-  }
-
-  /* ---- STEPS (EL MÉTODO) ---- */
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-    counter-reset: steps;
-  }
-
-  .step { 
-    padding: 40px 28px; 
-    background: rgba(255, 255, 255, 0.01); 
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    counter-increment: steps; 
-    position: relative; 
-    transition: border-color 0.3s;
-  }
-
-  .step:hover {
-    border-color: var(--hot-pink);
-  }
-  
-  .step::before {
-    content: counter(steps, decimal-leading-zero);
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    color: var(--cherry-red);
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    display: block;
-    margin-bottom: 20px;
-  }
-  
-  .step h3 { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; margin-bottom: 12px; }
-  
-  .step p { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
-
-  /* ---- PRICING ---- */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 28px;
-    margin-top: 48px;
-  }
-
-  .plan {
-    background: linear-gradient(135deg, rgba(18, 4, 27, 0.9) 0%, rgba(35, 8, 54, 0.6) 100%);
-    padding: 48px 36px;
-    position: relative;
-    border-radius: 28px;
-    border: 1px solid var(--border);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-  }
-
-  .plan:hover { 
-    border-color: var(--hot-pink); 
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(255, 46, 147, 0.2);
-  }
-
-  .plan.featured { 
-    border: 2px solid var(--hot-pink); 
-    background: linear-gradient(135deg, rgba(12, 1, 18, 0.98) 0%, rgba(45, 10, 68, 0.85) 100%);
-    box-shadow: 0 0 50px rgba(255, 46, 147, 0.3); 
-  }
-
-  .plan.featured::before {
-    content: 'LA FÓRMULA DE DISEÑO';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--cherry-red), var(--hot-pink));
-    color: var(--white);
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    padding: 6px 18px;
-    border-radius: 30px;
-    font-weight: 700;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(255, 49, 49, 0.5);
-  }
-
-  /* ---- GHOST TIER (MÓDULO OCULTO) ---- */
-  .plan.ghost-tier {
-    grid-column: 1 / -1;
-    max-width: 550px;
-    margin: 40px auto 0;
-    background: radial-gradient(circle at top right, rgba(255, 49, 49, 0.06), rgba(6, 1, 10, 0.98));
-    border: 1.5px dashed rgba(255, 122, 0, 0.25);
-    box-shadow: inset 0 0 25px rgba(255, 46, 147, 0.03);
-    opacity: 0.65;
-    transition: all 0.5s ease;
-  }
-
-  .plan.ghost-tier:hover {
-    opacity: 1;
-    border: 1.5px solid var(--tangerine);
-    box-shadow: 0 0 40px rgba(255, 122, 0, 0.25), inset 0 0 20px rgba(255, 49, 49, 0.08);
-    transform: translateY(-4px);
-  }
-
-  .plan.ghost-tier .ghost-badge {
-    position: absolute;
-    top: 16px; right: 24px;
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    color: var(--tangerine);
-    text-transform: uppercase;
-    animation: ghostPulse 1.8s infinite alternate;
-  }
-
-  @keyframes ghostPulse {
-    0% { opacity: 0.4; text-shadow: 0 0 0px transparent; }
-    100% { opacity: 1; text-shadow: 0 0 8px var(--tangerine); }
-  }
-
-  .plan-name {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: var(--bubblegum-pink);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .plan-price { 
-    font-family: 'Playfair Display', serif;
-    font-size: 64px; 
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1; 
-    margin-bottom: 12px; 
-  }
-  
-  .plan.featured .plan-price {
-    color: var(--tangerine);
-    text-shadow: 0 0 25px rgba(255, 122, 0, 0.4);
-  }
-
-  .plan.ghost-tier .plan-price {
-    font-size: 52px;
-    color: var(--white);
-    animation: glitchText 4.5s infinite;
-  }
-
-  @keyframes glitchText {
-    0%, 94%, 100% { transform: none; text-shadow: none; }
-    95% { transform: skewX(-12deg); text-shadow: 2px -1.5px var(--cherry-red), -2px 1.5px var(--tangerine); }
-    97% { transform: skewX(9deg); text-shadow: -1.5px 2px var(--hot-pink), 1.5px -2px var(--bubblegum-pink); }
-  }
-  
-  .plan-price sup { font-size: 24px; vertical-align: super; font-weight: 400; font-family: 'Playfair Display', serif; margin-right: 4px; }
-  
-  .plan-desc { font-size: 14px; color: var(--gray); margin-bottom: 36px; font-weight: 300; line-height: 1.5; }
-
-  .plan-features {
-    list-style: none;
-    margin-bottom: 44px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .plan-features li { font-size: 14px; color: var(--white); display: flex; align-items: flex-start; gap: 12px; font-weight: 300; }
-  .plan-features li::before { content: '🐾'; color: var(--cherry-red); flex-shrink: 0; font-size: 12px; }
-  .plan.featured .plan-features li::before { color: var(--tangerine); }
-  .plan.ghost-tier .plan-features li::before { content: '🔥'; color: var(--tangerine); }
-
-  .plan .btn-primary { 
-    width: 100%; 
-    text-align: center; 
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 16px;
-  }
-  
-  .plan .btn-ghost { 
-    width: 100%; 
-    text-align: center; 
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 15px;
-  }
-
-  .plan.ghost-tier .btn-ghost {
-    border-color: rgba(255, 122, 0, 0.4);
-    color: var(--tangerine);
-  }
-  .plan.ghost-tier .btn-ghost:hover {
-    background: rgba(255, 122, 0, 0.15);
-    border-color: var(--tangerine);
-    color: var(--white);
-  }
-
-  .alt-payment-text {
-    display: block;
-    text-align: center;
-    margin-top: 14px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--gray);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .alt-payment-text:hover {
-    color: var(--hot-pink);
-  }
-
-  /* ---- FINAL CTA ---- */
-  .final-cta { text-align: center; padding: 130px 24px; position: relative; overflow: hidden; z-index: 2; }
-  .final-cta::before {
-    content: 'RAW';
-    position: absolute;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(100px, 25vw, 260px);
-    font-weight: 900;
-    font-style: italic;
-    color: rgba(255, 49, 49, 0.03);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-  }
-  .final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 60px); margin-bottom: 20px; }
-  .final-cta p { color: var(--bubblegum-pink); margin-bottom: 40px; font-size: 16px; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-  /* ---- FOOTER ---- */
-  footer {
-    position: relative;
-    z-index: 2;
-    border-top: 1px solid var(--border);
-    padding: 48px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  footer p { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--gray); letter-spacing: 1px; }
-  footer a { color: var(--cherry-red); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 1px; transition: all 0.2s; }
-  footer a:hover { color: var(--tangerine); text-shadow: 0 0 8px var(--tangerine); }
-
-  /* ---- SCROLL REVEAL ---- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 600px) {
-    .strip { height: 180px; }
-    .strip-img:hover { flex: 1.8; }
-    footer { flex-direction: column; text-align: center; }
-  }
-
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-</style>
-</head>
-<body>
-
-<canvas id="ambient-canvas"></canvas>
-
-<!-- HERO SECTION -->
-<section class="hero" style="padding:0; max-width:100%;">
-  <div class="spotlight"></div>
-  <div class="spotlight-2"></div>
-  
-  <div class="hero-content">
-    <span class="tag-pill">✦ ACCESO COMPLETO AL WORKFLOW DE ALTO IMPACTO ✦</span>
-    <h1>Diseñá tu propio<span>.</span>avatar<em>para redes</em></h1>
-    <p class="hero-sub">
-      Workflows de modelado hiper-atractivo, prompts de anatomía estética y herramientas de control facial en tiempo real. Configurá un alter ego digital de forma limpia, consistente y con alto impacto.
+    <p style="text-align:center; margin-top:36px; font-size:13px; color:var(--gray); font-family:'Space Mono', monospace;">
+      Pagos procesados mediante PayPal y Mercado Pago de forma segura. Si tenés dudas, contactame por Instagram: <a href="https://instagram.com/connieferalofficial" target="_blank" style="color:var(--tangerine); text-decoration:none; font-weight: bold; text-shadow: 0 0 10px rgba(255, 122, 0, 0.35);">@connieferalofficial</a>
     </p>
-    <div class="hero-cta">
-      <a href="#pricing" class="btn-primary">CONSEGUIR MI PACK →</a>
-      <a href="#how" class="btn-ghost">EL MÉTODO</a>
-    </div>
-  </div>
-
-  <div class="strip">
-    <img class="strip-img" src="1.jpg" alt="Connie Feral 1" style="object-position: center 20%;">
-    <img class="strip-img" src="2.jpg" alt="Connie Feral 2">
-    <img class="strip-img" src="3.jpg" alt="Connie Feral 3">
-    <img class="strip-img" src="4.jpg" alt="Connie Feral 4">
   </div>
 </section>
 
-<!-- MARQUEE INFINITA -->
-<div class="marquee-wrap">
-  <div class="marquee-track" id="marquee-track"></div>
+<!-- FINAL CALL TO ACTION -->
+<div class="final-cta reveal">
+  <h2>Domina la presencia virtual</h2>
+  <p>Creá un avatar único con tus ideas, dominá sus movimientos faciales y generá video ilimitado.</p>
+  <a href="#pricing" class="btn-primary">CONSEGUIR MI PACK →</a>
 </div>
 
-<!-- VALUE PROPOSITION -->
-<section class="reveal">
-  <p class="section-label">arquitectura estética</p>
-  <h2>La fórmula de la<br><em>atracción virtual</em></h2>
+<!-- FOOTER -->
+<footer>
+  <p>MADE WITH AI WORKFLOW · 2026 · <a href="https://instagram.com/connieferalofficial" target="_blank">@connieferalofficial</a></p>
+</footer>
 
-  <div class="features">
-    <div class="feature">
-      <span class="feature-icon">🌶️</span>
-      <h3>Estética & Rasgos Premium</h3>
-      <p>Librerías exclusivas para estructurar facciones sumamente magnéticas, miradas expresivas de gran impacto, simetría perfecta y acabados ultra detallados.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">📱</span>
-      <h3>Consistencia en Redes</h3>
-      <p>Sistemas lógicos para clonar facciones en cualquier posición, pose o iluminación. Generá sets completos de contenido comercial e intuitivo impecables.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">🎬</span>
-      <h3>Generación de Video</h3>
-      <p>Configuraciones y accesos preferenciales a los mejores renderizadores de video sin costo. Creá clips hiperrealistas fluidos listos para monetizar.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">⛓️</span>
-      <h3>Motion Control Gratis</h3>
-      <p>Sistemas y controladores faciales libres para vincular tus expresiones corporales y gesticulaciones con el rostro de tu avatar de forma instantánea.</p>
-    </div>
-  </div>
-</section>
+<script>
+// AMBIENT PARTICLES (SWEET, GIRLY & FERAL EFFECTS)
+const canvas = document.getElementById('ambient-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
 
-<!-- COUNTERS / PROOF -->
-<div class="proof" style="max-width:100%;">
-  <div class="proof-grid">
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connie Feral — AI Avatar & Motion System</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
 
-  :root {
-    /* Paleta de colores de referencia */
-    --cherry-red: #FF3131;
-    --bubblegum-pink: #FF8CCB;
-    --hot-pink: #FF2E93;
-    --tangerine: #FF7A00;
-    
-    --purple-deep: #06010a;
-    --purple-mid: #12041b;
-    --white: #fffcfd;
-    --gray: #bfaabf;
-    --card: rgba(18, 4, 27, 0.65);
-    --border: rgba(255, 46, 147, 0.3);
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background-color: var(--purple-deep);
-    color: var(--white);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    overflow-x: hidden;
-    cursor: crosshair;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ---- BACKGROUND PARTICLES CANVAS ---- */
-  #ambient-canvas {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.45;
-  }
-
-  /* ---- HERO ---- */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    background: radial-gradient(ellipse 80% 60% at 50% 30%, #25021f 0%, #0d0112 60%, var(--purple-deep) 100%);
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  .hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px 40px;
-    position: relative;
-  }
-
-  .spotlight {
-    position: absolute;
-    width: 450px; height: 800px;
-    background: conic-gradient(from 180deg at 50% 0%, rgba(255, 49, 49, 0.22) 0deg, transparent 55deg);
-    top: -100px; left: 8%;
-    transform: rotate(-18deg);
-    pointer-events: none;
-  }
-  .spotlight-2 {
-    position: absolute;
-    width: 450px; height: 800px;
-    background: conic-gradient(from 180deg at 50% 0%, rgba(255, 122, 0, 0.18) 0deg, transparent 50deg);
-    top: -100px; right: 5%;
-    transform: rotate(22deg);
-    pointer-events: none;
-  }
-
-  .tag-pill {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--cherry-red), var(--hot-pink));
-    color: var(--white);
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    padding: 8px 24px;
-    border-radius: 999px;
-    margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 15px rgba(255, 49, 49, 0.45);
-    animation: pulsePill 2.5s ease-in-out infinite;
-  }
-
-  @keyframes pulsePill {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 49, 49, 0.6); }
-    50% { box-shadow: 0 0 0 14px rgba(255, 49, 49, 0); }
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 8.5vw, 90px);
-    font-weight: 800;
-    line-height: 0.95;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-  }
-
-  .hero h1 span {
-    color: transparent;
-    -webkit-text-stroke: 1.5px var(--bubblegum-pink);
-    filter: drop-shadow(0 0 15px var(--hot-pink));
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--tangerine);
-    display: block;
-    font-size: 0.42em;
-    letter-spacing: 4px;
-    font-weight: 400;
-    font-family: 'Playfair Display', serif;
-    margin-top: 14px;
-    text-transform: lowercase;
-    text-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
-  }
-
-  .hero-sub {
-    max-width: 580px;
-    margin: 12px auto 32px;
-    font-size: clamp(15px, 2.2vw, 19px);
-    line-height: 1.7;
-    color: var(--bubblegum-pink);
-    font-weight: 300;
-    opacity: 0.95;
-  }
-
-  .hero-cta { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--cherry-red) 0%, var(--hot-pink) 100%);
-    color: var(--white);
-    padding: 18px 40px;
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
-    box-shadow: 0 8px 30px rgba(255, 49, 49, 0.5);
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 15px 45px rgba(255, 46, 147, 0.8);
-  }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--bubblegum-pink);
-    padding: 17px 40px;
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1.5px solid var(--border);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .btn-ghost:hover {
-    border-color: var(--hot-pink);
-    background: rgba(255, 46, 147, 0.12);
-    color: var(--white);
-  }
-
-  /* ─── IMAGE STRIP ─── */
-  .strip {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    gap: 3px;
-    overflow: hidden;
-    height: clamp(180px, 26vw, 300px);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background-color: var(--purple-deep);
-  }
-
-  .strip-img {
-    flex: 1;
-    object-fit: cover;
-    object-position: center top;
-    filter: grayscale(15%) contrast(1.1) brightness(0.8);
-    transition: flex 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-    background: var(--purple-mid);
-  }
-
-  .strip-img:hover { flex: 2.8; filter: grayscale(0%) contrast(1.15) brightness(1); }
-
-  /* ---- MARQUEE ---- */
-  .marquee-wrap {
-    background: linear-gradient(90deg, var(--cherry-red), var(--hot-pink));
-    overflow: hidden;
-    padding: 14px 0;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 4px 20px rgba(255, 49, 49, 0.4);
-  }
-
-  .marquee-track {
-    display: flex;
-    gap: 0;
-    animation: marqueeScroll 28s linear infinite;
-    width: max-content;
-  }
-
-  .marquee-item {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: var(--white);
-    padding: 0 28px;
-    white-space: nowrap;
-    text-transform: uppercase;
-  }
-
-  .marquee-item span { color: var(--tangerine); margin-right: 8px; }
-
-  @keyframes marqueeScroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-
-  /* ---- SECTIONS BASE ---- */
-  section {
-    position: relative;
-    z-index: 2;
-    padding: 110px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.35em;
-    color: var(--hot-pink);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    text-shadow: 0 0 10px rgba(255, 46, 147, 0.4);
-  }
-
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(34px, 5.5vw, 68px);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 48px;
-  }
-
-  h2 em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--tangerine);
-  }
-
-  /* ---- FEATURES ---- */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-  }
-
-  .feature {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 40px 32px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1);
-    backdrop-filter: blur(8px);
-  }
-
-  .feature:hover {
-    border-color: var(--bubblegum-pink);
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(255, 46, 147, 0.25);
-  }
-
-  .feature::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--cherry-red), var(--tangerine));
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .feature:hover::before { opacity: 1; }
-
-  .feature-icon { font-size: 36px; margin-bottom: 22px; display: block; filter: drop-shadow(0 0 8px rgba(255, 49, 49, 0.5)); }
+function spawnParticle() {
+  const types = ['heart', 'star', 'paw', 'glow'];
+  const colors = ['#FF3131', '#FF8CCB', '#FF2E93', '#FF7A00'];
+  const chosenColor = colors[Math.floor(Math.random() * colors.length)];
   
-  .feature h3 { 
-    font-family: 'Syne', sans-serif;
-    font-size: 21px; 
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px; 
-    color: var(--white);
+  return {
+    x: Math.random() * W,
+    y: Math.random() * H,
+    size: 2 + Math.random() * 6,
+    vy: -0.15 - Math.random() * 0.45,
+    vx: (Math.random() - 0.5) * 0.25,
+    alpha: 0.15 + Math.random() * 0.65,
+    color: chosenColor,
+    type: types[Math.floor(Math.random() * types.length)],
+    rotation: Math.random() * Math.PI,
+    rotSpeed: (Math.random() - 0.5) * 0.015
+  };
+}
+
+for (let i = 0; i < 45; i++) {
+  particles.push(spawnParticle());
+}
+
+function drawHeart(x, y, size) {
+  ctx.beginPath();
+  ctx.moveTo(x, y + size / 4);
+  ctx.quadraticCurveTo(x, y, x + size / 2, y);
+  ctx.quadraticCurveTo(x + size, y, x + size, y + size / 3);
+  ctx.quadraticCurveTo(x + size, y + (size * 2) / 3, x + size / 2, y + size);
+  ctx.quadraticCurveTo(x, y + (size * 2) / 3, x, y + size / 3);
+  ctx.quadraticCurveTo(x, y, x, y + size / 4);
+  ctx.closePath();
+}
+
+function drawStar(x, y, size) {
+  ctx.beginPath();
+  for (let i = 0; i < 5; i++) {
+    ctx.lineTo(Math.cos((18 + i * 72) * Math.PI / 180) * size + x,
+               Math.sin((18 + i * 72) * Math.PI / 180) * size + y);
+    ctx.lineTo(Math.cos((54 + i * 72) * Math.PI / 180) * (size/2) + x,
+               Math.sin((54 + i * 72) * Math.PI / 180) * (size/2) * 1.1 + y);
   }
-  
-  .feature p { font-size: 14px; color: var(--gray); line-height: 1.7; font-weight: 300; }
+  ctx.closePath();
+}
 
-  /* ---- PROOF ---- */
-  .proof { 
-    text-align: center; 
-    padding: 72px 24px; 
-    border-top: 1px solid var(--border); 
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    z-index: 2;
-    background: linear-gradient(to right, transparent, rgba(255, 46, 147, 0.05), transparent);
-  }
-  
-  .proof-grid { display: flex; justify-content: center; gap: clamp(40px, 9vw, 110px); flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
-  
-  .proof-number { 
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 9vw, 88px); 
-    font-weight: 800;
-    font-style: italic;
-    color: var(--tangerine); 
-    text-shadow: 0 0 25px rgba(255, 122, 0, 0.35);
-  }
-  
-  .proof-label { 
-    font-family: 'Space Mono', monospace;
-    font-size: 11px; 
-    color: var(--bubblegum-pink); 
-    letter-spacing: 3px;
-    margin-top: 8px; 
-    text-transform: uppercase;
-  }
+function drawPaw(x, y, size) {
+  ctx.beginPath();
+  ctx.arc(x, y, size * 0.55, 0, Math.PI * 2);
+  ctx.arc(x - size * 0.45, y - size * 0.35, size * 0.25, 0, Math.PI * 2);
+  ctx.arc(x - size * 0.15, y - size * 0.55, size * 0.25, 0, Math.PI * 2);
+  ctx.arc(x + size * 0.2, y - size * 0.55, size * 0.25, 0, Math.PI * 2);
+  ctx.arc(x + size * 0.5, y - size * 0.3, size * 0.25, 0, Math.PI * 2);
+  ctx.closePath();
+}
 
-  /* ---- STEPS (EL MÉTODO) ---- */
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-    counter-reset: steps;
-  }
+function loop() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.y += p.vy;
+    p.x += p.vx;
+    p.rotation += p.rotSpeed;
+    if (p.y < -20) { 
+      Object.assign(p, spawnParticle()); 
+      p.y = H + 20; 
+    }
+    ctx.save();
+    ctx.globalAlpha = p.alpha;
+    ctx.fillStyle = p.color;
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotation);
 
-  .step { 
-    padding: 40px 28px; 
-    background: rgba(255, 255, 255, 0.01); 
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    counter-increment: steps; 
-    position: relative; 
-    transition: border-color 0.3s;
-  }
+    if (p.type === 'heart') {
+      drawHeart(-p.size/2, -p.size/2, p.size);
+      ctx.fill();
+    } else if (p.type === 'star') {
+      drawStar(0, 0, p.size * 0.8);
+      ctx.fill();
+    } else if (p.type === 'paw') {
+      drawPaw(0, 0, p.size * 0.7);
+      ctx.fill();
+    } else {
+      ctx.beginPath();
+      ctx.arc(0, 0, p.size * 0.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+  });
+  requestAnimationFrame(loop);
+}
+loop();
 
-  .step:hover {
-    border-color: var(--hot-pink);
-  }
-  
-  .step::before {
-    content: counter(steps, decimal-leading-zero);
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    color: var(--cherry-red);
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    display: block;
-    margin-bottom: 20px;
-  }
-  
-  .step h3 { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; margin-bottom: 12px; }
-  
-  .step p { font-size: 13px; color: var(--gray); line-height: 1.6; font-weight: 300; }
+// MARQUEE TEXT TRACK
+const items = ['DISEÑÁ TU PROPIO AVATAR AI','PACK DE CREACIÓN','SYSTEM PROMPTS','FREE MOTION CONTROL','GENERACIÓN DE VIDEO GRATIS','ESTÉTICA ALTERNATIVA GLAM','DNA DE CREADOR','BECOME FERAL','🐾','🎀','✦'];
+const track = document.getElementById('marquee-track');
+[...items, ...items, ...items].forEach(t => {
+  const el = document.createElement('span');
+  el.className = 'marquee-item';
+  el.innerHTML = `<span>✦</span> ${t} `;
+  track.appendChild(el);
+});
 
-  /* ---- PRICING ---- */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 28px;
-    margin-top: 48px;
-  }
-
-  .plan {
-    background: linear-gradient(135deg, rgba(18, 4, 27, 0.9) 0%, rgba(35, 8, 54, 0.6) 100%);
-    padding: 48px 36px;
-    position: relative;
-    border-radius: 28px;
-    border: 1px solid var(--border);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-  }
-
-  .plan:hover { 
-    border-color: var(--hot-pink); 
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(255, 46, 147, 0.2);
-  }
-
-  .plan.featured { 
-    border: 2px solid var(--hot-pink); 
-    background: linear-gradient(135deg, rgba(12, 1, 18, 0.98) 0%, rgba(45, 10, 68, 0.85) 100%);
-    box-shadow: 0 0 50px rgba(255, 46, 147, 0.3); 
-  }
-
-  .plan.featured::before {
-    content: 'LA FÓRMULA DE DISEÑO';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--cherry-red), var(--hot-pink));
-    color: var(--white);
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    padding: 6px 18px;
-    border-radius: 30px;
-    font-weight: 700;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(255, 49, 49, 0.5);
-  }
-
-  /* ---- GHOST TIER (MÓDULO OCULTO) ---- */
-  .plan.ghost-tier {
-    grid-column: 1 / -1;
-    max-width: 550px;
-    margin: 40px auto 0;
-    background: radial-gradient(circle at top right, rgba(255, 49, 49, 0.06), rgba(6, 1, 10, 0.98));
-    border: 1.5px dashed rgba(255, 122, 0, 0.25);
-    box-shadow: inset 0 0 25px rgba(255, 46, 147, 0.03);
-    opacity: 0.65;
-    transition: all 0.5s ease;
-  }
-
-  .plan.ghost-tier:hover {
-    opacity: 1;
-    border: 1.5px solid var(--tangerine);
-    box-shadow: 0 0 40px rgba(255, 122, 0, 0.25), inset 0 0 20px rgba(255, 49, 49, 0.08);
-    transform: translateY(-4px);
-  }
-
-  .plan.ghost-tier .ghost-badge {
-    position: absolute;
-    top: 16px; right: 24px;
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2.5px;
-    color: var(--tangerine);
-    text-transform: uppercase;
-    animation: ghostPulse 1.8s infinite alternate;
-  }
-
-  @keyframes ghostPulse {
-    0% { opacity: 0.4; text-shadow: 0 0 0px transparent; }
-    100% { opacity: 1; text-shadow: 0 0 8px var(--tangerine); }
-  }
-
-  .plan-name {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: var(--bubblegum-pink);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .plan-price { 
-    font-family: 'Playfair Display', serif;
-    font-size: 64px; 
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1; 
-    margin-bottom: 12px; 
-  }
-  
-  .plan.featured .plan-price {
-    color: var(--tangerine);
-    text-shadow: 0 0 25px rgba(255, 122, 0, 0.4);
-  }
-
-  .plan.ghost-tier .plan-price {
-    font-size: 52px;
-    color: var(--white);
-    animation: glitchText 4.5s infinite;
-  }
-
-  @keyframes glitchText {
-    0%, 94%, 100% { transform: none; text-shadow: none; }
-    95% { transform: skewX(-12deg); text-shadow: 2px -1.5px var(--cherry-red), -2px 1.5px var(--tangerine); }
-    97% { transform: skewX(9deg); text-shadow: -1.5px 2px var(--hot-pink), 1.5px -2px var(--bubblegum-pink); }
-  }
-  
-  .plan-price sup { font-size: 24px; vertical-align: super; font-weight: 400; font-family: 'Playfair Display', serif; margin-right: 4px; }
-  
-  .plan-desc { font-size: 14px; color: var(--gray); margin-bottom: 36px; font-weight: 300; line-height: 1.5; }
-
-  .plan-features {
-    list-style: none;
-    margin-bottom: 44px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .plan-features li { font-size: 14px; color: var(--white); display: flex; align-items: flex-start; gap: 12px; font-weight: 300; }
-  .plan-features li::before { content: '🐾'; color: var(--cherry-red); flex-shrink: 0; font-size: 12px; }
-  .plan.featured .plan-features li::before { color: var(--tangerine); }
-  .plan.ghost-tier .plan-features li::before { content: '🔥'; color: var(--tangerine); }
-
-  .plan .btn-primary { 
-    width: 100%; 
-    text-align: center; 
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 16px;
-  }
-  
-  .plan .btn-ghost { 
-    width: 100%; 
-    text-align: center; 
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 15px;
-  }
-
-  .plan.ghost-tier .btn-ghost {
-    border-color: rgba(255, 122, 0, 0.4);
-    color: var(--tangerine);
-  }
-  .plan.ghost-tier .btn-ghost:hover {
-    background: rgba(255, 122, 0, 0.15);
-    border-color: var(--tangerine);
-    color: var(--white);
-  }
-
-  .alt-payment-text {
-    display: block;
-    text-align: center;
-    margin-top: 14px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--gray);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .alt-payment-text:hover {
-    color: var(--hot-pink);
-  }
-
-  /* ---- FINAL CTA ---- */
-  .final-cta { text-align: center; padding: 130px 24px; position: relative; overflow: hidden; z-index: 2; }
-  .final-cta::before {
-    content: 'RAW';
-    position: absolute;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(100px, 25vw, 260px);
-    font-weight: 900;
-    font-style: italic;
-    color: rgba(255, 49, 49, 0.03);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-  }
-  .final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 60px); margin-bottom: 20px; }
-  .final-cta p { color: var(--bubblegum-pink); margin-bottom: 40px; font-size: 16px; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-  /* ---- FOOTER ---- */
-  footer {
-    position: relative;
-    z-index: 2;
-    border-top: 1px solid var(--border);
-    padding: 48px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  footer p { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--gray); letter-spacing: 1px; }
-  footer a { color: var(--cherry-red); text-decoration: none; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 1px; transition: all 0.2s; }
-  footer a:hover { color: var(--tangerine); text-shadow: 0 0 8px var(--tangerine); }
-
-  /* ---- SCROLL REVEAL ---- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 600px) {
-    .strip { height: 180px; }
-    .strip-img:hover { flex: 1.8; }
-    footer { flex-direction: column; text-align: center; }
-  }
-
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-</style>
-</head>
-<body>
-
-<canvas id="ambient-canvas"></canvas>
-
-<!-- HERO SECTION -->
-<section class="hero" style="padding:0; max-width:100%;">
-  <div class="spotlight"></div>
-  <div class="spotlight-2"></div>
-  
-  <div class="hero-content">
-    <span class="tag-pill">✦ ACCESO COMPLETO AL WORKFLOW DE ALTO IMPACTO ✦</span>
-    <h1>Diseñá tu propio<span>.</span>avatar<em>para redes</em></h1>
-    <p class="hero-sub">
-      Workflows de modelado hiper-atractivo, prompts de anatomía estética y herramientas de control facial en tiempo real. Configurá un alter ego digital de forma limpia, consistente y con alto impacto.
-    </p>
-    <div class="hero-cta">
-      <a href="#pricing" class="btn-primary">CONSEGUIR MI PACK →</a>
-      <a href="#how" class="btn-ghost">EL MÉTODO</a>
-    </div>
-  </div>
-
-  <div class="strip">
-    <img class="strip-img" src="1.jpg" alt="Connie Feral 1" style="object-position: center 20%;">
-    <img class="strip-img" src="2.jpg" alt="Connie Feral 2">
-    <img class="strip-img" src="3.jpg" alt="Connie Feral 3">
-    <img class="strip-img" src="4.jpg" alt="Connie Feral 4">
-  </div>
-</section>
-
-<!-- MARQUEE INFINITA -->
-<div class="marquee-wrap">
-  <div class="marquee-track" id="marquee-track"></div>
-</div>
-
-<!-- VALUE PROPOSITION -->
-<section class="reveal">
-  <p class="section-label">arquitectura estética</p>
-  <h2>La fórmula de la<br><em>atracción virtual</em></h2>
-
-  <div class="features">
-    <div class="feature">
-      <span class="feature-icon">🌶️</span>
-      <h3>Estética & Rasgos Premium</h3>
-      <p>Librerías exclusivas para estructurar facciones sumamente magnéticas, miradas expresivas de gran impacto, simetría perfecta y acabados ultra detallados.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">📱</span>
-      <h3>Consistencia en Redes</h3>
-      <p>Sistemas lógicos para clonar facciones en cualquier posición, pose o iluminación. Generá sets completos de contenido comercial e intuitivo impecables.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">🎬</span>
-      <h3>Generación de Video</h3>
-      <p>Configuraciones y accesos preferenciales a los mejores renderizadores de video sin costo. Creá clips hiperrealistas fluidos listos para monetizar.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon">⛓️</span>
-      <h3>Motion Control Gratis</h3>
-      <p>Sistemas y controladores faciales libres para vincular tus expresiones corporales y gesticulaciones con el rostro de tu avatar de forma instantánea.</p>
-    </div>
-  </div>
-</section>
-
-<!-- COUNTERS / PROOF -->
-<div class="proof" style="max-width:100%;">
-  <div class="proof-grid">
+// SCROLL REVEAL OBSERVER
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
